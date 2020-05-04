@@ -1,55 +1,28 @@
-class Avenger 
-{
 
-    //properties
-    name;
-    picture;
-    description;
+import slider from "./UIO/slider.js"; // we only use the information here to get click events
+import controler from "./BIO/control.js";// main logic of the program
 
-    //Constructor
-    constructor(n,p,d)
-    {
-        this.name=n;
-        this.picture=p;
-        this.description = d;
-    }
-    
-}
+//This layer handles the event listners and calls teh business logic 
+// program flow
 
 
 //entry point of applicaiton 
 function main()
 {
-
-    //fectch elements from the DOM
-    const h1 = document.querySelector("#avenger-text");
-    const image = document.querySelector("#avenger-image");
-
-    const avengersArr = [];
-    let index=1;
-
-    avengersArr.push(new Avenger("Hulk","1.jpg","A picture of hulk"));
-    avengersArr.push(new Avenger("Iron Man","2.jpg","A picture of Iron Man"))
-    avengersArr.push(new Avenger("Thor","3.jpg","A picture of Thor"))
-    avengersArr.push(new Avenger("Thanos","4.jpg","A picture of Thanos"))
-    avengersArr.push(new Avenger("Spider Man","5.jpg","A picture of Spiderman"));
-
-
-    setInterval(function(){
-       
-        image.src = `img/${avengersArr[index].picture}`; 
-        image.alt= avengersArr[index].description;
-        h1.innerHTML=  avengersArr[index].name;
-        
-        index++;
-
-        if(index == avengersArr.length)
-        {
-            index=0;
-        }
+    const s= new slider;
+    const control= new controler;
     
+    control.play();//playes the slide show updating the ui and fetching from the database 
 
-    },5000);
+    s.leftCont.addEventListener("click",(e)=>{
+        // minus 1 from image index and upadte the src from the databse
+        control.goBack();
+    });
+
+    s.rightCont.addEventListener("click",(e)=>{
+        // plus 1 to image index and upadte the src from the databse
+        control.goForward();
+    });
 
 }
 
