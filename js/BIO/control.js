@@ -53,7 +53,7 @@ class Control
     //this is where i'd get data from database and past it to the screen to update
     // this layer handle the calculations for the app and business logic ie how it functions
     
-    index=1;
+    // index=1; ---- was to be the globak value for the index to pull from the database.which would them be modified
     constructor(i)
     {
         this.index=i;
