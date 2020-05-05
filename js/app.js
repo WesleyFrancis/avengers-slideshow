@@ -9,8 +9,8 @@ import controler from "./BIO/control.js";// main logic of the program
 //entry point of applicaiton 
 function main()
 {
-    const s= new slider;
-    const control= new controler;
+    const s= new slider();
+    const control= new controler(1);
     
     control.play();//playes the slide show updating the ui and fetching from the database 
 

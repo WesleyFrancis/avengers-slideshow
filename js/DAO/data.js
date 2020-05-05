@@ -6,20 +6,19 @@ class Avenger //fetch information needed
     picture=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'];
     title=['A picture of hulk','A picture of Iron Man','A picture of Thor','A picture of Thanos','A picture of Spiderman'];
     
-        getImageData(index)
-        {
-            const data={
-                name:this.name[index],
-                picture:this.picture[index],
-                title:this.title[index]
-            }
-            return data;// return data object
+    getImageData(index)
+    {
+        const data={
+            name:this.name[index],
+            picture:this.picture[index],
+            title:this.title[index]
         }
-        getTotalImages()
-        {
-            return this.name.length;
-        }
-    
+        return data;// return data object
+    }
+    getTotalImages()
+    {
+        return this.name.length;
+    }
 }
 
 export default Avenger;
