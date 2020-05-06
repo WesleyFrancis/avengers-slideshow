@@ -3,7 +3,7 @@ class Heros //fetch information needed
     //an object literal containg an array of heros and their properties(simulated database)
     hero=[
         {
-            namme:'hulk',
+            namme:'Hulk',
             picture:'1.jpg',
             title:'A picture of hulk',
         },
