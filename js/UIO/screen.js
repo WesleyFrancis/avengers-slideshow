@@ -1,5 +1,5 @@
 //------UPDATE MINIPULATE SLIDER VISIUALLY------
-class Slider{
+class Screen{
 
     container=document.querySelector(".container");
     text=document.querySelector("#avenger-text");
@@ -10,11 +10,14 @@ class Slider{
 
     updateSlider(object)// info sent from BLO from databace;
     {
-        
+     //   console.log(object);
+        if(object!=null)//to safe guard against null index by over doing it with the clicker
+        {
         this.image.src = `../img/${object.picture}`; 
-        this.image.alt= object.alt; 
-        this.text.innerHTML= object.title; 
+        this.image.alt= object.title; 
+        this.text.innerHTML= object.namme; 
+        }
     }
 }
 
-export default Slider;
+export default Screen;
